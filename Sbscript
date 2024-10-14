@@ -1,0 +1,65 @@
+local zzx = loadstring(game:HttpGet(('https://sirius.menu/rayfield'):gsub('s',string.char(115))))() 
+local A1A2A3 = zzx:CreateWindow({Name=((string.char(86,101,110,116,97,110,97))..(' de Hitbox')),LoadingTitle=table.concat({'Interfaz',' para',' el Sebos'}),LoadingSubtitle='Por '..('S'..'olaris'),ConfigurationSaving={Enabled=true,FolderName=nil,FileName=('Big'..' Hub')},Discord={Enabled=false,Invite=table.concat({'si','rius'}),RememberJoins=true},KeySystem=true,KeySettings={Title='Sebas '..'hub',Subtitle=string.gsub('Sistema de llaves','ll','l'),Note="Agregame soy solari: "..'mikh.solaris',FileName='SiriusKey',SaveKey=true,GrabKeyFromSite=false,Key='P'..'eruano'}})
+local BxY = A1A2A3:CreateTab(('H'..'itb'..'ox'),4483362458)
+
+zzx:Notify({Title=((string.reverse('not'..'oB')):reverse()),Content='Noti'..'fic'..'acion',Duration=6.5,Image=4483362458,Actions={Ignore={Name='Ta'..' bueno wey',Callback=function()print(('Ya lo activaste ctm'):sub(1))end}}})
+
+local HkMmTn=20
+local LkZj=BxY:CreateSlider({Name='Tama'..'ño del hitb'..'ox',Range={0,100},Increment=10,Suffix=string.reverse('sduSt'),CurrentValue=HkMmTn,Flag="XyZl",Callback=function(SmFn)HkMmTn=SmFn end})
+
+local _Z_ = true
+local QlPwRt=false
+local pOvZm=false
+
+local function abc(player)
+    if player.Character and player.Character:FindFirstChild(string.reverse('traPt'..'oniamuH')) then
+        local TzWpZ=player.Character.HumanoidRootPart
+        local BgQrSs=Instance.new(('BillboardGui'):sub(1))
+        BgQrSs.Size=UDim2.new(0,100,0,50)
+        BgQrSs.Adornee=TzWpZ
+        BgQrSs.AlwaysOnTop=true
+        local CrWx=Instance.new(string.sub('Text'..'Label',1))
+        CrWx.Size=UDim2.new(1,0,1,0)
+        CrWx.BackgroundTransparency=1
+        CrWx.TextColor3=Color3.new(tonumber('1'),1,1)
+        CrWx.TextStrokeTransparency=0
+        CrWx.Text=player.Name
+        CrWx.Font=Enum.Font.SourceSansBold
+        CrWx.TextSize=tonumber('1'..'4')
+        CrWx.TextScaled=true
+        BgQrSs.Parent=game.Workspace
+    end
+end
+
+local hQnUq_=BxY:CreateToggle({Name='Activa'..'r ESP',CurrentValue=false,Flag='Toggle'..'1',Callback=function(CbGr)
+    pOvZm=CbGr
+    if pOvZm then 
+        for _,LlMgQe in pairs(game.Players:GetPlayers())do 
+            if LlMgQe~=game.Players.LocalPlayer then abc(LlMgQe)end 
+        end
+    else 
+        for _,mBxZn in pairs(workspace:GetChildren())do 
+            if mBxZn:IsA(('BillboardGui'):sub(1)) then mBxZn:Destroy()end 
+        end
+    end 
+end})
+
+game:GetService(('RunS'..'ervice'))['RenderStepped']:Connect(function()
+    if _Z_ then
+        local CtNxZm=game:GetService(('Players'))['LocalPlayer']
+        if not CtNxZm then return end
+        local LqPwN_=CtNxZm.Team
+        for _,QzNbTg in ipairs(game:GetService(('Players')):GetPlayers())do
+            if QzNbTg~=CtNxZm and (not QlPwRt or QzNbTg.Team~=LqPwN_)then
+                local GfMdQn=QzNbTg.Character and QzNbTg.Character:FindFirstChild('HumanoidRootPart')
+                if GfMdQn then
+                    GfMdQn.Size=Vector3.new(HkMmTn,HkMmTn,HkMmTn)
+                    GfMdQn.Transparency=tonumber('0'..'.7')
+                    GfMdQn.BrickColor=BrickColor.new(('Really blue'):reverse():reverse())
+                    GfMdQn.Material=Enum.Material.Neon
+                    GfMdQn.CanCollide=false
+                end
+            end
+        end
+    end
+end)
